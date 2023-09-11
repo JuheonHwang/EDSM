@@ -7,4 +7,4 @@ https://darkpgmr.tistory.com/142를 통해 함수최적화 기법 더 알아볼 
 
 PCG(Preconditioned Conjugate Gradient Method)는 아래 링크 참조
 https://en.wikipedia.org/wiki/Conjugate_gradient_method#Convergence_properties
-Preconditioner로는 주로 'none': just vanilla Jacobian $\times$ Jacobian (let Jp) / 'eye': add eye of Jp / 'diag': add double diagonal of Jp사용
+Preconditioner로는 주로 'none': just vanilla Jacobian $\times$ Jacobian (let Jp) / 'eye': add eye of Jp / 'diag': add twice diagonal of Jp사용
