@@ -1,0 +1,41 @@
+=== t01_ed_model  (2026-11-20 22:51:10) ===
+MATLAB 2026b
+
+Model built in 0.4 s: source 5027 vertices / 9995 faces, target 5033 vertices, 50 ED nodes, 606 parameters (legacyJacobian=0)
+nNodes = 50 (= round(5027 * sampleRate 0.01))
+first 5 nodes: source vertex index and position g_i
+  node  1  vertex 2097  g = [  -545.1    237.0   1283.8]
+  node  2  vertex 3621  g = [   467.4     51.7   1513.0]
+  node  3  vertex    1  g = [  -718.9   -138.0    862.7]
+  node  4  vertex 1519  g = [  -682.0    -54.1   1210.1]
+  node  5  vertex  738  g = [  -478.8    134.9   1049.2]
+g0 equals src.V(nodeIdx,:)': 1
+idxNodeNeighbor is 6 x 50; first column is the node itself: 1
+directed neighbor links: 250, undirected edges: 155
+nodes with x < -650 (the floor slab at the feet, approximate threshold): 18 of 50
+vertices without valid ED neighbors (kept at the source position): 9 of 5027
+[figure] docs/img/t01_ed_model_graph.png  (1200 x 811 px)
+row sums of W over valid vertices: min 1.000000 max 1.000000
+valid vertices with 4 / 3 / 2 / 1 nonzero weights: 5018 / 0 / 0 / 0 (nVertexNeighbor = 4)
+vertices influenced per node: min 147  median 372  max 711
+selected node 47 (head): position [  905.4    74.5  1652.1], influences 371 vertices
+selected node 42 (chest): position [  477.8    68.7  1553.3], influences 701 vertices
+selected node 40 (thigh): position [  -74.6   212.1  1534.5], influences 414 vertices
+[figure] docs/img/t01_ed_model_weights.png  (1200 x 840 px)
+numel(P0) = 606 = 6 + 12*50
+r = P(1:3), T = P(4:6), A = P(7:456), t = P(457:606)
+A_3 occupies P(25:33); t_3 occupies P(463:465)
+nonzero entries of P0(1:33): [7 11 15 16 20 24 25 29 33]
+round trip max error: R 0.0e+00  T 0.0e+00  A 0.0e+00  t 0.0e+00
+A_2 = P(16:24) reshaped to 3x3 equals A(:,:,2): 1
+[figure] docs/img/t01_ed_model_layout.png  (1200 x 750 px)
+deform(P0) vs source vertices: max |diff| = 6.82e-13 (identity)
+original                        :    0 vertices move (>1e-6), max displacement 0.0, influence region of node 42 has 701 vertices
+t_i = (0, 0, 150)               :  701 vertices move (>1e-6), max displacement 98.7, influence region of node 42 has 701 vertices
+A_i = 45 deg rotation about y   :  700 vertices move (>1e-6), max displacement 66.0, influence region of node 42 has 701 vertices
+A_i = 1.6 I                     :  700 vertices move (>1e-6), max displacement 64.3, influence region of node 42 has 701 vertices
+[figure] docs/img/t01_ed_model_local_deform.png  (1200 x 1230 px)
+global: r = [0 0.35 0], T = [0 0 100] -> max displacement 401.5, centroid moves by [0.1493 -1.38e-15 99.47]
+[figure] docs/img/t01_ed_model_global_deform.png  (1200 x 811 px)
+
+=== t01_ed_model finished in 6.8 s; log: tutorials/output/t01_ed_model.log ===

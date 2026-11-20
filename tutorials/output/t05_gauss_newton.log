@@ -1,0 +1,60 @@
+=== t05_gauss_newton  (2026-11-20 22:53:01) ===
+MATLAB 2026b
+
+Model built in 0.4 s: source 5027 vertices / 9995 faces, target 5033 vertices, 50 ED nodes, 606 parameters (legacyJacobian=0)
+JtJ \ (-g): MATLAB warning: (none issued) 
+rcond(JtJ) = 1.289e-23
+
+step d at P0            |d|           ||F+Jd||^2 (model)   err(P0 + d) (actual)
+  JtJ \ (-g)             236.6         212.642             197.48
+  lsqminnorm(J, -F)      230.9         212.642             197.532
+  lsqminnorm(JtJ, -g)    230.9         212.642             197.532
+  pinv(JtJ, tol) * (-g)  68.28         213.571             194.748
+
+|dMinNormJ - dMinNormN| / |dMinNormJ| = 5.67e-10
+|dMinNormJ - dPinv| / |dMinNormJ|     = 9.55e-01
+err(P0) = 279.678134;  linear model predicts err = 212.642035 after the minimum-norm step
+
+Gauss-Newton: 12 iterations, stop reason "maxIter"
+iter  err               |step|         
+   0  279.678         
+   1  197.532           230.9
+   2  982.197           1960
+   3  1731.55           2077
+   4  13285.3           5718
+   5  122004            2.918e+04
+   6  8.46685e+08       3.955e+05
+   7  1.90927e+15       1.447e+07
+   8  1.25856e+14       8.17e+06
+   9  1.36549e+13       3.601e+06
+  10  4.24324e+15       1.512e+07
+  11  3.46559e+14       7.608e+06
+  12  5.04318e+13       3.905e+06
+
+iter   err_before        predicted        actual           rho
+   1   279.678           212.642          197.532          1.225
+   2   197.532           180.161          982.197          -45.17
+   3   982.197           509.88           1731.55          -1.587
+   4   1731.55           840.751          13285.3          -12.97
+   5   13285.3           4139.65          122004           -11.89
+   6   122004            35950.4          8.46685e+08      -9838
+   7   8.46685e+08       225216           1.90927e+15      -2.256e+06
+   8   1.90927e+15       1.07141e+08      1.25856e+14      0.9341
+   9   1.25856e+14       2.70784e+07      1.36549e+13      0.8915
+  10   1.36549e+13       8.96262e+06      4.24324e+15      -309.7
+  11   4.24324e+15       1.45699e+08      3.46559e+14      0.9183
+  12   3.46559e+14       3.6428e+07       5.04318e+13      0.8545
+[figure] docs/img/t05_gauss_newton_convergence.png  (1200 x 571 px)
+[figure] docs/img/t05_gauss_newton_predicted_vs_actual.png  (1200 x 600 px)
+
+iterate 0: err 279.678, 600 of 606 singular values above rank tolerance, smallest kept 2.663e-03, largest 6.147e+02
+  |step| from SVD formula = 230.9, from lsqminnorm = 230.9
+  largest coefficient 202.6 belongs to s = 2.663e-03 (|u'F| = 5.395e-01); share of |step|^2 from the 10 smallest s: 85.8%
+
+iterate 3: err 1731.55, 603 of 606 singular values above rank tolerance, smallest kept 1.168e-04, largest 6.102e+02
+  |step| from SVD formula = 5718, from lsqminnorm = 5718
+  largest coefficient 5241 belongs to s = 1.168e-04 (|u'F| = 6.122e-01); share of |step|^2 from the 10 smallest s: 99.2%
+[figure] docs/img/t05_gauss_newton_step_spectrum.png  (1200 x 585 px)
+[figure] docs/img/t05_gauss_newton_iterates.png  (1200 x 780 px)
+
+=== t05_gauss_newton finished in 9.3 s; log: tutorials/output/t05_gauss_newton.log ===
