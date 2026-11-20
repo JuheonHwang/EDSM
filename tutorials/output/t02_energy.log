@@ -1,0 +1,59 @@
+=== t02_energy  (2026-11-20 22:51:23) ===
+MATLAB 2026b
+
+Model built in 0.4 s: source 5027 vertices / 9995 faces, target 5033 vertices, 50 ED nodes, 606 parameters (legacyJacobian=0)
+
+Row ranges of F (numel(F) = 30830):
+  fit     rows     1 : 15099   (15099 entries)
+  rot1    rows 15100 : 15549   (  450 entries)
+  rot2    rows 15550 : 15599   (   50 entries)
+  smooth  rows 15600 : 15749   (  150 entries)
+  lap     rows 15750 : 30830   (15081 entries)
+
+Contribution to err(P0) = sum(F.^2) = 279.678134
+  term     sum of squares      share
+  Efit            238.783   85.3778%
+  Erot                  0    0.0000%
+  Esmooth               0    0.0000%
+  Elap            40.8951   14.6222%
+  sum of the four terms - sum(F.^2) = 2.84e-13
+
+max |Erot| = 0.00e+00, max |Esmooth| = 0.00e+00 at P0
+Elap: 5027 vertex residuals, mean |.| = 0.08087, max |.| = 0.3973 (weight wLap = 0.01 included)
+
+target vertices 5033, distinct source vertices matched 3617 of 5027 (72.0%)
+fit distances at P0 (mesh units): mean 13.70  median 12.67  max 57.63
+check: sum(Efit.^2) = sum(d.^2)/nTar = 238.783004 vs 238.783004
+
+After 30 LM iterations, err = 150.718984
+  term              at P0       after LM
+  Efit            238.783        109.709
+  Erot                  0       0.337724
+  Esmooth               0       0.329217
+  Elap            40.8951        40.3429
+fit distances after LM: mean 9.52  median 9.06  max 37.23; distinct source vertices matched 3869
+[figure] docs/img/t02_energy_terms.png  (1200 x 630 px)
+
+Sum of squares per term (node 42 for single-node cases):
+  perturbation                                 Efit         Erot      Esmooth         Elap        total
+  identity (P0)                               238.8            0            0         40.9   279.678134
+  A_i = 1.2 I (scale one node)                239.6      0.02222       0.3841         41.1   281.112585
+  A_i = rotation by 30 deg                    243.8            0        1.824        40.98   286.645075
+  t_i = (0, 0, 50) (move one node)            239.5            0        5.333        41.01   285.836738
+  all t_i = (0, 0, 50)                        767.1            0            0         40.9   808.017231
+  global T = (0, 0, 50)                       767.1            0            0         40.9   808.017231
+Change relative to P0:
+  A_i = 1.2 I (scale one node)               0.8204      0.02222       0.3841       0.2077
+  A_i = rotation by 30 deg                    5.062            0        1.824      0.08096
+  t_i = (0, 0, 50) (move one node)           0.7061            0        5.333       0.1192
+  all t_i = (0, 0, 50)                        528.3            0            0   -2.132e-14
+  global T = (0, 0, 50)                       528.3            0            0    7.105e-15
+[figure] docs/img/t02_energy_perturbations.png  (1200 x 690 px)
+
+fraction of target vertices farther than 40 from the source: P0 0.8%, after LM 0.0%
+[figure] docs/img/t02_energy_fit_error.png  (1200 x 871 px)
+
+zoom window near target vertex 5019 (d0 = 57.6): 656 target vertices inside, 328 lines drawn
+[figure] docs/img/t02_energy_correspondences.png  (1200 x 690 px)
+
+=== t02_energy finished in 9.9 s; log: tutorials/output/t02_energy.log ===

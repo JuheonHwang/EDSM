@@ -1,0 +1,45 @@
+=== t00_quickstart  (2026-11-20 23:12:03) ===
+MATLAB 2026b
+
+Model built in 0.3 s: source 5027 vertices / 9995 faces, target 5033 vertices, 50 ED nodes, 606 parameters (legacyJacobian=0)
+Residual vector: 30830 entries, err(P0) = sum(F.^2) = 279.6781
+[levenbergMarquardt] iter   1  err 193.962082  |step| 7.244e+01  t 0.13s  lambda 0.01
+[levenbergMarquardt] iter   2  err 173.688225  |step| 1.072e+02  t 0.25s  lambda 0.001
+[levenbergMarquardt] iter   3  err 165.1137579  |step| 5.323e+01  t 0.36s  lambda 0.0001
+[levenbergMarquardt] iter   4  err 160.8770209  |step| 4.099e+01  t 0.47s  lambda 1e-05
+[levenbergMarquardt] iter   5  err 158.2854494  |step| 6.752e+01  t 0.59s  lambda 1e-06
+[levenbergMarquardt] iter   6  err 156.8605334  |step| 2.079e+02  t 0.70s  lambda 1e-07
+[levenbergMarquardt] iter   7  err 155.2696649  |step| 1.452e+02  t 0.86s  lambda 1e-06
+[levenbergMarquardt] iter   8  err 154.1502734  |step| 8.717e+01  t 0.97s  lambda 1e-06
+[levenbergMarquardt] iter   9  err 153.7700112  |step| 1.382e+02  t 1.11s  lambda 1e-06
+[levenbergMarquardt] iter  10  err 153.2269417  |step| 1.206e+02  t 1.22s  lambda 1e-06
+[levenbergMarquardt] iter  11  err 153.0661559  |step| 1.305e+02  t 1.35s  lambda 1e-06
+[levenbergMarquardt] iter  12  err 152.624814  |step| 3.242e+01  t 1.54s  lambda 1e-06
+[levenbergMarquardt] iter  13  err 152.4347579  |step| 3.671e+01  t 1.72s  lambda 1e-06
+[levenbergMarquardt] iter  14  err 152.2899039  |step| 9.607e+01  t 1.83s  lambda 1e-06
+[levenbergMarquardt] iter  15  err 152.1094323  |step| 7.558e+01  t 1.97s  lambda 1e-06
+[levenbergMarquardt] iter  16  err 151.9433351  |step| 2.441e+01  t 2.08s  lambda 1e-06
+[levenbergMarquardt] iter  17  err 151.8138557  |step| 9.940e+01  t 2.21s  lambda 1e-06
+[levenbergMarquardt] iter  18  err 151.5900856  |step| 4.103e+01  t 2.32s  lambda 1e-06
+[levenbergMarquardt] iter  19  err 151.4233945  |step| 3.804e+01  t 2.43s  lambda 1e-07
+[levenbergMarquardt] iter  20  err 151.380081  |step| 3.732e+01  t 2.54s  lambda 1e-08
+[levenbergMarquardt] iter  21  err 151.3565509  |step| 8.138e+01  t 2.69s  lambda 1e-07
+[levenbergMarquardt] iter  22  err 151.2726112  |step| 5.164e+01  t 2.82s  lambda 1e-06
+[levenbergMarquardt] iter  23  err 151.1862654  |step| 3.868e+01  t 2.93s  lambda 1e-06
+[levenbergMarquardt] iter  24  err 151.1691054  |step| 7.733e+01  t 3.04s  lambda 1e-07
+[levenbergMarquardt] iter  25  err 151.1086153  |step| 9.389e+01  t 3.19s  lambda 1e-06
+[levenbergMarquardt] iter  26  err 150.9417497  |step| 8.066e+01  t 3.30s  lambda 1e-06
+[levenbergMarquardt] iter  27  err 150.8449863  |step| 5.165e+01  t 3.43s  lambda 1e-06
+[levenbergMarquardt] iter  28  err 150.8032187  |step| 6.316e+01  t 3.54s  lambda 1e-06
+[levenbergMarquardt] iter  29  err 150.7504007  |step| 4.622e+01  t 3.69s  lambda 1e-06
+[levenbergMarquardt] iter  30  err 150.7189838  |step| 9.537e+00  t 3.80s  lambda 1e-06
+
+LM finished: 30 iterations, stop reason "maxIter", 3.8 s
+err: 279.6781 -> 150.7190  (53.9% of the start value)
+Distance target vertex -> nearest source vertex (mesh units):
+  before: mean 13.70  median 12.67  95% 26.42  max 57.63
+  after : mean 9.52  median 9.06  95% 17.47  max 37.23
+[figure] docs/img/t00_quickstart_before_after.png  (1200 x 811 px)
+[figure] docs/img/t00_quickstart_convergence.png  (1200 x 540 px)
+
+=== t00_quickstart finished in 7.9 s; log: tutorials/output/t00_quickstart.log ===

@@ -1,0 +1,31 @@
+=== t08_compare  (2026-11-20 22:56:53) ===
+MATLAB 2026b
+
+Model built in 0.4 s: source 5027 vertices / 9995 faces, target 5033 vertices, 50 ED nodes, 606 parameters (legacyJacobian=0)
+Loaded cached runs from tutorials/output/t08_runs.mat (set forceRecompute = true to redo)
+
+solver              iter stop              final err        min err     |grad|_2  time [s]
+gradient descent     100 maxIter             301.762        243.514         4976      7.16
+Gauss-Newton          30 maxIter         9.65389e+17        197.532    1.405e+16      4.73
+LM direct/diag        48 funTol              150.662        150.662       0.2019      7.57
+LM direct/eye         41 funTol              149.962        149.962     0.003984      6.43
+LM cg/diag           100 maxIter             149.504        149.504      0.01294     15.43
+LM pcg/diag           73 funTol              149.733        149.733       0.1988     12.85
+lsqnonlin             31 maxIter             151.387        151.387        10.99     18.12
+(final err is recomputed from the returned P; for lsqnonlin / GD it can differ from hist.err(end) only by rounding)
+
+lowest final error: LM cg/diag with 149.5043 (start 279.6781)
+final errors of the converging solvers (LM variants, lsqnonlin) span 149.5043 - 151.3867; differences of this size between
+runs that stopped for different reasons are not a ranking of the methods.
+hist.gradNorm (inf-norm) for LM direct/diag   final 0.1926
+hist.gradNorm (inf-norm) for LM direct/eye    final 0.003218
+hist.gradNorm (inf-norm) for LM cg/diag       final 0.00726
+hist.gradNorm (inf-norm) for LM pcg/diag      final 0.1928
+[figure] docs/img/t08_compare_convergence.png  (1200 x 721 px)
+[figure] docs/img/t08_compare_convergence_zoom.png  (1200 x 721 px)
+[figure] docs/img/t08_compare_summary.png  (1200 x 600 px)
+
+best result (LM cg/diag): target-to-source distance mean 13.70 -> 9.48, 95% 26.42 -> 17.29, max 57.63 -> 37.06
+[figure] docs/img/t08_compare_best_result.png  (1291 x 840 px)
+
+=== t08_compare finished in 7.7 s; log: tutorials/output/t08_compare.log ===

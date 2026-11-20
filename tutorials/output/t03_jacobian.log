@@ -1,0 +1,63 @@
+=== t03_jacobian  (2026-11-20 22:51:39) ===
+MATLAB 2026b
+
+Model built in 0.4 s: source 5027 vertices / 9995 faces, target 5033 vertices, 50 ED nodes, 606 parameters (legacyJacobian=0)
+J at P0: 30830 x 606, nnz = 601773 (3.221% dense)
+
+nonzeros per block (rows: terms, columns: parameter groups)
+                  r         T         A         t
+  fit         30198     15099    180639     60396
+  rot1            0         0       750         0
+  rot2            0         0       150         0
+  smooth          0         0       450       900
+  lap         30096         0    212328     70767
+[figure] docs/img/t03_jacobian_sparsity.png  (1200 x 900 px)
+
+finite differences: 606 columns, 1212 residual evaluations, 1.6 s
+
+corrected Jacobian: max |J_analytic - J_numeric| per block
+                    r           T           A           t
+  fit        3.27e-09    7.85e-10    4.42e-09    3.46e-09
+  rot1       0.00e+00    0.00e+00    3.91e-11    0.00e+00
+  rot2       0.00e+00    0.00e+00    3.61e-11    0.00e+00
+  smooth     0.00e+00    0.00e+00    1.87e-09    5.42e-09
+  lap        3.82e-09    2.38e-09    4.83e-09    3.74e-09
+corrected Jacobian: same, relative to max(1, largest entry of the block) (NaN = block is zero in both)
+                    r           T           A           t
+  fit        2.17e-10    7.85e-10    1.67e-09    3.46e-09
+  rot1            NaN         NaN    3.91e-11         NaN
+  rot2            NaN         NaN    3.61e-11         NaN
+  smooth          NaN         NaN    1.18e-10    5.42e-09
+  lap        3.82e-09    2.38e-09    4.83e-09    3.74e-09
+
+legacy Jacobian: max |J_analytic - J_numeric| per block
+                    r           T           A           t
+  fit        9.64e+00    1.41e-02    2.63e+00    9.40e-03
+  rot1       0.00e+00    0.00e+00    3.09e-02    0.00e+00
+  rot2       0.00e+00    0.00e+00    1.47e-02    0.00e+00
+  smooth     0.00e+00    0.00e+00    1.87e-09    5.42e-09
+  lap        3.42e-01    2.38e-09    1.01e-01    3.74e-09
+legacy Jacobian: same, relative to max(1, largest entry of the block) (NaN = block is zero in both)
+                    r           T           A           t
+  fit        6.40e-01    1.41e-02    9.97e-01    9.40e-03
+  rot1            NaN         NaN    3.09e-02         NaN
+  rot2            NaN         NaN    1.47e-02         NaN
+  smooth          NaN         NaN    1.18e-10    5.42e-09
+  lap        3.42e-01    2.38e-09    1.01e-01    3.74e-09
+[figure] docs/img/t03_jacobian_fd_check.png  (1200 x 571 px)
+
+singular values of J at P0: largest 614.7, 7th smallest 0.002663, 6 smallest: [7.92e-14 5.78e-14 5.78e-14 5.78e-14 5.78e-14 5.78e-14]
+gap: sv(end-6) / sv(end-5) = 3.36e+10;  condition number of the nonzero part sv(1)/sv(end-6) = 2.31e+05
+numerical rank (tol = eps*max(size(J))*sv(1) = 4.21e-09): 600 of 606
+
+hand-built null directions: |J v| / |v| (compare with sv(1) = 615)
+  dT = e_x, dt_i = -e_x                                1.943e-17
+  dT = e_y, dt_i = -e_y                                1.943e-17
+  dT = e_z, dt_i = -e_z                                1.943e-17
+  dr = e_x, dA_i = -[e_x]x, dt_i = -[e_x]x(g_i-G0)     8.237e-17
+  dr = e_y, ... (same with e_y)                        5.291e-17
+  dr = e_z, ... (same with e_z)                        2.616e-17
+angle between span(hand-built) and the 6 smallest right singular vectors: 3.98e-14 rad
+[figure] docs/img/t03_jacobian_singular_values.png  (1200 x 571 px)
+
+=== t03_jacobian finished in 8.3 s; log: tutorials/output/t03_jacobian.log ===

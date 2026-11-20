@@ -1,0 +1,62 @@
+=== t06_levenberg_marquardt  (2026-11-20 22:55:02) ===
+MATLAB 2026b
+
+Model built in 0.4 s: source 5027 vertices / 9995 faces, target 5033 vertices, 50 ED nodes, 606 parameters (legacyJacobian=0)
+diag(J'J): min 4.119e-03, max 3.698e+05, number of zeros 0
+
+lambda      | diag: angle to GN  |step|   err(P0+d) | eye: angle to GN  angle to -g  |step|   err(P0+d)
+ 1.00e-06   |           3.19      230.8      197.5 |          2.80        89.96      207.2      196.9
+ 1.00e-05   |           3.28      227.3      197.3 |         21.58        89.94      125.3      195.3
+ 1.00e-04   |           5.95      197.9        196 |         55.68        89.89      71.47      194.7
+ 1.00e-03   |          35.27      109.6      193.6 |         68.60        89.78      35.46        196
+ 1.00e-02   |          67.14      72.44        194 |         75.96        89.31      10.78      199.4
+ 1.00e-01   |          76.37      44.33      197.5 |         83.96        87.96      3.487      201.7
+ 1.00e+00   |          81.27      24.55      212.8 |         88.03        85.77      1.569      205.6
+ 1.00e+01   |          83.46      7.435      253.8 |         89.33        83.38     0.8216      213.8
+ 1.00e+02   |          84.00     0.9797        276 |         89.66        80.93      0.318      239.2
+ 1.00e+03   |          84.07     0.1013      279.3 |         89.76        76.97     0.0633      266.8
+ 1.00e+04   |          84.08    0.01017      279.6 |         89.81        55.95   0.008653      275.3
+ 1.00e+05   |          84.08   0.001017      279.7 |         89.93        23.40   0.002252      277.8
+ 1.00e+06   |          84.08  0.0001017      279.7 |         89.96         6.48  0.0004057      279.3
+GN step: |d| = 230.9, err(P0 + dGN) = 197.5;  err(P0) = 279.7
+best lambda on this grid (diag damping): 3.16e-03 with err 193.5
+[figure] docs/img/t06_levenberg_marquardt_lambda_bridge.png  (1200 x 690 px)
+
+LM default (damping diag, direct): 48 accepted iterations, stop reason "funTol", 8.4 s
+err: 279.6781 -> 150.6621;  hist.gradNorm available: 1
+rejected trial steps in total: 24; accepted iterations that needed rejections: 20 of 48
+lambda used: min 1.00e-08, max 1.00e-02
+iter  err         lambda    nReject  lambdaNext  |step|
+   1  193.96208   1.0e-02   0        1.0e-03     72.44
+   2  173.68822   1.0e-03   0        1.0e-04     107.2
+   3  165.11376   1.0e-04   0        1.0e-05     53.23
+   4  160.87702   1.0e-05   0        1.0e-06     40.99
+   5  158.28545   1.0e-06   0        1.0e-07     67.52
+   6  156.86053   1.0e-07   0        1.0e-08     207.9
+   7  155.26966   1.0e-06   2        1.0e-06     145.2
+   8  154.15027   1.0e-06   0        1.0e-07     87.17
+   9  153.77001   1.0e-06   1        1.0e-06     138.2
+  10  153.22694   1.0e-06   0        1.0e-07     120.6
+  11  153.06616   1.0e-06   1        1.0e-06     130.5
+  12  152.62481   1.0e-06   0        1.0e-07     32.42
+  48  150.66209   1.0e-06   1        1.0e-06     4.802
+gradient inf-norm ||2 J'F||_inf (hist.gradNorm): start 733.1, final 0.1926
+[figure] docs/img/t06_levenberg_marquardt_history.png  (1200 x 1261 px)
+
+LM damping eye : 41 iterations, stop "funTol", err 149.9616, 6.8 s, rejected trials 21
+LM damping diag: 48 iterations, stop "funTol", err 150.6621, 8.4 s, rejected trials 24
+error after 10 / 20 / 40 iterations: diag 153.227 / 151.380 / 150.662 ; eye 153.325 / 150.512 / 149.962
+[figure] docs/img/t06_levenberg_marquardt_damping.png  (1200 x 571 px)
+Model built in 0.3 s: source 5027 vertices / 9995 faces, target 5033 vertices, 50 ED nodes, 606 parameters (legacyJacobian=1)
+
+LM, legacy Jacobian: 33 iterations, stop "lambdaMax", err 162.4137, 5.3 s
+
+||2 J'F|| at the final point of each run:
+  run                                  legacy J        corrected J
+  LM with legacy Jacobian                 42.33              42.46
+  LM with corrected Jacobian             0.2664             0.2019
+err at the final points: legacy-J run 162.4137, corrected-J run 150.6621 (difference 11.75)
+hist.gradNorm (inf-norm) final: legacy run 33.22, corrected run 0.1926
+[figure] docs/img/t06_levenberg_marquardt_jacobian_modes.png  (1200 x 571 px)
+
+=== t06_levenberg_marquardt finished in 30.9 s; log: tutorials/output/t06_levenberg_marquardt.log ===

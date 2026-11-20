@@ -1,0 +1,49 @@
+=== t07_cg_pcg  (2026-11-20 22:55:57) ===
+MATLAB 2026b
+
+Model built in 0.4 s: source 5027 vertices / 9995 faces, target 5033 vertices, 50 ED nodes, 606 parameters (legacyJacobian=0)
+System from LM iteration 5 (err 158.2854): lambda = 1.0e-07, n = 606, nnz(A) = 124538 (33.9% dense), |b| = 99.51
+direct A\b : 0.0025 s, residual |b - A x| = 9.233e-12
+cg   (precond none  ):  606 iterations, 0.0385 s, final residual 8.789e-01, relative error vs direct 9.980e-01
+pcg  (precond jacobi):  606 iterations, 0.0328 s, final residual 9.527e-02, relative error vs direct 5.554e-02
+cg   with cap 20000: 20000 iterations, final residual 1.313e-03, relative error vs direct 6.261e-01
+pcg  with cap 20000: 1093 iterations, final residual 6.872e-11, relative error vs direct 1.158e-09
+first iteration with residual < 1e-10  : cg never, pcg 1093
+first iteration with residual < 1e-06  : cg never, pcg 923
+first iteration with residual < 0.001  : cg 5437, pcg 466
+first iteration with residual < 0.1    : cg 138, pcg 114
+first iteration with residual < 1      : cg 23, pcg 32
+[figure] docs/img/t07_cg_pcg_residual_curves.png  (1200 x 630 px)
+
+diag(A): min 4.087e-03, max 3.703e+05, spread max/min = 9.061e+07
+eigenvalues of A       : max 3.7766e+05, min 2.8203e-09, cond = 1.339e+14
+eigenvalues of D^-1/2AD^-1/2: max 6.0870e+00, min 1.0000e-07, cond = 6.087e+07
+smallest eigenvalue of the scaled matrix 1.0000e-07 vs lambda 1.0e-07 (null directions of J'J are only lifted by the damping)
+eigenvalues below 1e-3 * largest: A 588, scaled 17
+eigenvalues below 1e-6 * largest: A 163, scaled 6
+[figure] docs/img/t07_cg_pcg_spectrum.png  (1200 x 585 px)
+
+lambda      cond(A)     cond(scaled)   CG iters   PCG iters   (cap 606)
+   1e-08   1.319e+15     6.087e+08       606        606
+   1e-07   1.339e+14     6.087e+07       606        606
+   1e-06   1.554e+13     6.087e+06       606        606
+   1e-05   1.819e+12     6.087e+05       606        606
+   1e-04   1.867e+11     6.087e+04       606        606
+   1e-03   1.899e+10     6.088e+03       606        565
+   1e-02   4.605e+09     6.097e+02       606        263
+   1e-01   6.164e+08     6.187e+01       606         94
+   1e+00   1.261e+08     7.087e+00       606         32
+[figure] docs/img/t07_cg_pcg_lambda_dependence.png  (1200 x 585 px)
+
+solver            iter stop        final err     |grad|_2  time [s]       solves mean CG it  max CG it
+direct              48 funTol       150.6621       0.2019      6.77           72          -          -
+cg (tol 1e-10)     100 maxIter      149.5043      0.01294     14.13          100      606.0        606
+pcg (tol 1e-10)     73 funTol       149.7331       0.1988     11.69          112      602.7        606
+cg (tol 0.1)        25 lambdaMax    151.1579        0.198      3.19           57      108.8        606
+pcg (tol 0.1)       34 lambdaMax    150.4086       0.1961      4.16           75       22.1        102
+(solves = linear solves incl. rejected trials; mean/max CG iterations per solve; - = direct)
+hist.gradNorm available: 1
+[figure] docs/img/t07_cg_pcg_lm_runs.png  (1200 x 585 px)
+[figure] docs/img/t07_cg_pcg_cg_iterations.png  (1200 x 585 px)
+
+=== t07_cg_pcg finished in 52.0 s; log: tutorials/output/t07_cg_pcg.log ===

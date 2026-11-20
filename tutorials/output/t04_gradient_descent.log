@@ -1,0 +1,48 @@
+=== t04_gradient_descent  (2026-11-20 22:51:52) ===
+MATLAB 2026b
+
+Model built in 0.4 s: source 5027 vertices / 9995 faces, target 5033 vertices, 50 ED nodes, 606 parameters (legacyJacobian=0)
+err(P0) = 279.6781, |grad| = 944.2
+gradient norm by parameter group: r 931.3 | T 5.725 | A 155.2 | t 1.716
+lambda_max(J'J) = 3.778e+05
+Stability bound at P0, alpha_max = 1/lambda_max(S^(1/2) J'J S^(1/2)), S = diag of step factors:
+  globalStepScale 0     : lambda_max =      861.3   alpha_max = 0.00116
+  globalStepScale 0.01  : lambda_max =       3970   alpha_max = 0.000252
+  globalStepScale 0.1   : lambda_max =  3.794e+04   alpha_max = 2.64e-05
+  globalStepScale 1     : lambda_max =  3.778e+05   alpha_max = 2.65e-06
+(The bound is computed at P0 only; J changes along the path.)
+
+default run: err 279.6781 -> minimum 243.5140 at iteration 2 -> final 301.7615 after 100 iterations (5.6 s)
+iterations with an INCREASE of the error: 40 of 100 (first at iteration 3)
+iter  err        |step|
+   0   279.6781
+   1   254.4104  0.155
+   2   243.5140  0.127
+   5   449.6176  0.227
+  10  1555.0935  0.763
+  20   528.5393  0.514
+  40   482.1326  0.37
+  60   671.0922  0.359
+  80   550.8132  0.413
+ 100   301.7615  0.224
+|grad| at the final iterate = 4976 (it was 944.2 at P0)
+[figure] docs/img/t04_gradient_descent_default_run.png  (1200 x 571 px)
+
+step size sweep (globalStepScale 0.01):
+  alpha     iters    final err      min err   argmin stop      
+  1e-05       100       254.58       254.58      100 maxIter   
+  1e-04       100       198.51       198.51      100 maxIter   
+  3e-04       100       182.24       182.24      100 maxIter   
+  1e-03       100       301.76       243.51        2 maxIter   
+  3e-03        19          Inf       257.69        1 nonFinite 
+[figure] docs/img/t04_gradient_descent_step_size.png  (1200 x 661 px)
+
+globalStepScale sweep (stepSize 1e-3):
+  scale     iters    final err      min err   argmin stop      
+  0           100       176.08       176.08      100 maxIter   
+  0.01        100       301.76       243.51        2 maxIter   
+  0.1         100       2012.5       279.68        0 maxIter   
+  1           100       7761.3       279.68        0 maxIter   
+[figure] docs/img/t04_gradient_descent_global_step_scale.png  (1200 x 661 px)
+
+=== t04_gradient_descent finished in 42.7 s; log: tutorials/output/t04_gradient_descent.log ===
